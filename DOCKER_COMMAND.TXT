@@ -1,17 +1,1 @@
 docker run -d --name mariaDb -eMARIADB_ROOT_PASSWORD=password  -eMARIADB_ROOT_HOST=% -eMARIADB_DATABASE=esempio -eMARIADB_USER=ccarducci -eMARIADB_PASSWORD=cristiano -p3306:3306 mariadb/server:10.3 
-
-
-
-
-docker run --name=mysql_contabilita -v /Users/ccarducci/Sviluppo/Docker/mysql-server-docker:/docker_mount -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql/mysql-server:8.0
-docker logs mysql_contabilita
-docker exec -it mysql_contabilita mysql -uroot -p
-
-CREATE USER 'root'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-
-CREATE USER 'administator'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'administator'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-
